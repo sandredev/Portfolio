@@ -13,6 +13,7 @@ import {
   Terminal,
   BookOpen,
   Brain,
+  Bot,
 } from 'lucide-react'
 
 const skillGroups = [
@@ -50,6 +51,11 @@ const skillGroups = [
     title: 'Herramientas',
     icon: Wrench,
     skills: ['GitHub', 'VS Code', 'IntelliJ IDEA'],
+  },
+  {
+    title: 'Automatización con agentes',
+    icon: Bot,
+    skills: ['OpenCode', 'Agentes de código IA', 'Automatización de flujos'],
   },
   {
     title: 'Idiomas',

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Cpu, TerminalSquare, Brain, Globe } from 'lucide-react'
+import { Cpu, TerminalSquare, Brain, Globe, Bot } from 'lucide-react'
 
 const focuses = [
   {
@@ -18,6 +18,11 @@ const focuses = [
     icon: Brain,
     title: 'ML & Deep Learning',
     items: ['Estudiando y profundizando', 'Python'],
+  },
+  {
+    icon: Bot,
+    title: 'Agentes de código',
+    items: ['OpenCode', 'Automatización de flujos'],
   },
   {
     icon: Globe,
@@ -45,7 +50,7 @@ export default function TechFocus() {
           <div className="w-20 h-1 bg-primary rounded-full mx-auto" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {focuses.map((item, index) => (
             <motion.div
               key={item.title}
