@@ -1,0 +1,66 @@
+---
+const links = [
+  { label: 'Inicio', href: '#hero' },
+  { label: 'Sobre mí', href: '#about' },
+  { label: 'Proyectos', href: '#projects' },
+  { label: 'Liderazgo', href: '#leadership' },
+  { label: 'Enfoque', href: '#tech-focus' },
+  { label: 'Educación', href: '#education' },
+  { label: 'Habilidades', href: '#skills' },
+  { label: 'Contacto', href: '#contact' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/60 border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#hero" class="text-xl font-bold text-white tracking-tight">
+      ST<span class="text-primary">.</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-1">
+      {
+        links.map((link) => (
+          <a
+            data-nav
+            href={link.href}
+            class="px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <button
+      id="nav-toggle"
+      aria-label="Abrir menú"
+      class="md:hidden text-gray-300 hover:text-white transition-colors"
+    >
+      <svg id="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+      <svg id="icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden overflow-hidden border-t border-white/5">
+    <div class="px-6 py-4 space-y-2">
+      {
+        links.map((link) => (
+          <a
+            data-nav
+            href={link.href}
+            class="block px-3 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white hover:bg-white/5"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
