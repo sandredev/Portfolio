@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Santiago Torres | Investigación en Sistemas y Computación</title>
+    <meta
+      name="description"
+      content="Portfolio de Santiago Andres Torres Forero, estudiante de Ingeniería de Sistemas enfocado en investigación: diseño de SO, compiladores con C/C++, Linux y Machine Learning. Presidente de Syste+ y líder de CILISP."
+    />
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Menú móvil
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      toggle?.addEventListener('click', () => {
+        const open = menu?.classList.toggle('hidden');
+        document.getElementById('icon-menu')?.classList.toggle('hidden', !open);
+        document.getElementById('icon-close')?.classList.toggle('hidden', !!open);
+      });
+      menu?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          document.getElementById('icon-menu')?.classList.remove('hidden');
+          document.getElementById('icon-close')?.classList.add('hidden');
+        }),
+      );
+
+      // Scrollspy
+      const links = Array.from(document.querySelectorAll('[data-nav]'));
+      const sections = ['hero', 'about', 'projects', 'leadership', 'tech-focus', 'education', 'skills', 'contact']
+        .map((id) => document.getElementById(id))
+        .filter((el) => el !== null);
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            links.forEach((l) => {
+              const active = l.getAttribute('href') === `#${entry.target.id}`;
+              l.classList.toggle('text-white', active);
+              l.classList.toggle('bg-primary/20', active);
+              l.classList.toggle('text-gray-400', !active);
+            });
+          });
+        },
+        { rootMargin: '-50% 0px -50% 0px' },
+      );
+      sections.forEach((s) => spy.observe(s as Element));
+
+      // Reveal on scroll
+      const revealer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll('.reveal').forEach((el) => revealer.observe(el));
+
+      // Barra de progreso de scroll
+      const bar = document.getElementById('scroll-progress');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const p = max > 0 ? h.scrollTop / max : 0;
+        if (bar) bar.style.transform = `scaleX(${p})`;
+      };
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    </script>
+  </body>
+</html>

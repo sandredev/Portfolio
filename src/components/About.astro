@@ -1,0 +1,75 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const highlights = [
+  {
+    label: 'Investigación en sistemas',
+    desc: 'Diseño de SO y compiladores con C/C++, Linux',
+    icon: '<circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.5" y2="16.5" />',
+  },
+  {
+    label: 'Linux, Scripting y Bajo Nivel',
+    desc: 'Líder de CILISP: formo a quienes quieren empezar',
+    icon: '<polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />',
+  },
+  {
+    label: 'ML & Deep Learning',
+    desc: 'Estudiando y profundizando continuamente',
+    icon: '<circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><circle cx="18" cy="12" r="2.5" /><line x1="8.3" y1="7.2" x2="15.7" y2="10.8" /><line x1="8.3" y1="16.8" x2="15.7" y2="13.2" />',
+  },
+];
+---
+
+<section id="about" class="py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <SectionHeading index="01" command="whoami">
+      Sobre <span class="text-primary">mí</span>
+    </SectionHeading>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal space-y-5">
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Santiago es estudiante de
+          <span class="text-white font-semibold">Ingeniería de Sistemas</span> en la
+          Universidad del Magdalena, orientado a la
+          <span class="text-white font-semibold">investigación</span>. Estudia diseño
+          de <span class="text-white font-semibold">sistemas operativos</span> y
+          <span class="text-white font-semibold">compiladores</span> con C/C++, además
+          de <span class="text-white font-semibold">Linux</span>.
+        </p>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          Es <span class="text-white font-semibold">presidente de Syste+</span>,
+          Asociación de Estudiantes de Ingeniería de Sistemas (2026-II — 2027-I), miembro
+          en formación del semillero
+          <span class="text-white font-semibold">GIDSYC</span> y líder de la
+          <span class="text-white font-semibold">CILISP</span>: comunidad de estudio
+          de Linux, Scripting y Programación de Bajo Nivel.
+        </p>
+        <p class="text-gray-300 leading-relaxed text-lg">
+          También estudia y profundiza en
+          <span class="text-white font-semibold">Machine Learning y Deep Learning</span>.
+          El desarrollo de páginas web es hoy un interés
+          <span class="text-white font-semibold">secundario</span>. Se caracteriza por
+          su liderazgo, buen rendimiento en entornos desafiantes y por ver cada fallo como
+          una oportunidad de aprendizaje.
+        </p>
+      </div>
+
+      <div class="reveal grid gap-4">
+        {
+          highlights.map((item) => (
+            <div class="card-glow flex items-start gap-4 p-5 rounded-xl bg-surface border border-white/5 hover:border-primary/20 group">
+              <div class="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
+              </div>
+              <div>
+                <h3 class="text-white font-semibold mb-1">{item.label}</h3>
+                <p class="text-gray-400 text-sm">{item.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

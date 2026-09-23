@@ -1,0 +1,52 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const education = [
+  {
+    title: 'Universidad del Magdalena',
+    subtitle: 'Ingeniería de Sistemas',
+    period: '2024 - presente',
+    description: 'Enfoque en investigación: diseño de SO, compiladores con C/C++, Linux y ML & Deep Learning.',
+    icon: '<path d="M22 9L12 4 2 9l10 5 10-5z" /><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" /><line x1="22" y1="9" x2="22" y2="15" />',
+  },
+  {
+    title: 'Instituto Tayrona',
+    subtitle: 'Primaria y Bachillerato',
+    period: '2013 - 2023',
+    description: 'Formación académica básica y media.',
+    icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z" /><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />',
+  },
+];
+---
+
+<section id="education" class="py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <SectionHeading index="05" command="cat educacion.log">
+      Educación
+    </SectionHeading>
+
+    <div class="max-w-3xl mx-auto space-y-6">
+      {
+        education.map((item) => (
+          <div class="reveal flex gap-5 p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/20 transition-all duration-300 group">
+            <div class="p-3 rounded-xl bg-primary/10 text-primary h-fit group-hover:bg-primary/20 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4">
+                <div class="min-w-0">
+                  <h3 class="text-lg sm:text-xl font-bold text-white break-words">{item.title}</h3>
+                  <p class="text-sm sm:text-base text-primary font-medium">{item.subtitle}</p>
+                </div>
+                <span class="text-xs sm:text-sm text-gray-500 whitespace-nowrap bg-white/5 px-2.5 sm:px-3 py-1 rounded-lg self-start">
+                  {item.period}
+                </span>
+              </div>
+              <p class="text-gray-400 mt-2">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
