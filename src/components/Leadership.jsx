@@ -1,31 +1,41 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { GraduationCap, BookOpen } from 'lucide-react'
+import { Crown, FlaskConical, TerminalSquare } from 'lucide-react'
 
-const education = [
+const roles = [
   {
-    icon: GraduationCap,
-    title: 'Universidad del Magdalena',
-    subtitle: 'Ingeniería de Sistemas',
-    period: '2024 - presente',
-    description: 'Enfoque en investigación: diseño de SO, compiladores con C/C++, Linux y ML & Deep Learning.',
+    icon: Crown,
+    title: 'Presidente de Syste+',
+    subtitle: 'Asociación de Estudiantes de Ingeniería de Sistemas · Univ. del Magdalena',
+    period: '2026-II — 2027-I',
+    description:
+      'Represento y lidero a la asociación estudiantil del programa, impulsando actividades académicas, comunidad y participación estudiantil.',
   },
   {
-    icon: BookOpen,
-    title: 'Instituto Tayrona',
-    subtitle: 'Primaria y Bachillerato',
-    period: '2013 - 2023',
-    description: 'Formación académica básica y media.',
+    icon: TerminalSquare,
+    title: 'Líder de CILISP',
+    subtitle: 'Comunidad de Linux, Scripting y Programación de Bajo Nivel',
+    period: 'Actualidad',
+    description:
+      'Lidero una comunidad de estudio donde promuevo la investigación en Linux, scripting y bajo nivel, acompañando a estudiantes interesados que no saben cómo empezar a aprender.',
+  },
+  {
+    icon: FlaskConical,
+    title: 'Semillero GIDSYC',
+    subtitle: 'Grupo de Investigación y Desarrollo en Sistemas y Computación',
+    period: 'Empezando',
+    description:
+      'Empezando a involucrarme en el semillero de investigación, con interés en sistemas, computación y aprendizaje automático.',
   },
 ]
 
-export default function Education() {
+export default function Leadership() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="education" className="py-24 md:py-32 px-6" ref={ref}>
+    <section id="leadership" className="py-24 md:py-32 px-6" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -34,13 +44,13 @@ export default function Education() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="text-primary">Educación</span>
+            Liderazgo e <span className="text-primary">investigación</span>
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mx-auto" />
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-6">
-          {education.map((item, index) => (
+          {roles.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, x: -30 }}

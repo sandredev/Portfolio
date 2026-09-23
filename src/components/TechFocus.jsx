@@ -1,28 +1,28 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Zap, Bot, Server, Rocket } from 'lucide-react'
+import { Cpu, TerminalSquare, Brain, Globe } from 'lucide-react'
 
 const focuses = [
   {
-    icon: Zap,
-    title: 'Frontend',
-    items: ['React', 'TailwindCSS'],
+    icon: Cpu,
+    title: 'Sistemas y compiladores',
+    items: ['C / C++', 'Diseño de SO', 'Parsing y gramáticas'],
   },
   {
-    icon: Bot,
-    title: 'Automatización con IA',
-    items: ['OpenCode', 'n8n (próximamente)'],
+    icon: TerminalSquare,
+    title: 'Linux y scripting',
+    items: ['Linux', 'Bash / Scripting', 'Programación de bajo nivel'],
   },
   {
-    icon: Server,
-    title: 'Backend',
-    items: ['Python', 'Django (aprendiendo)'],
-  },
-  {
-    icon: Rocket,
+    icon: Brain,
     title: 'ML & Deep Learning',
-    items: ['Profundizando continuamente'],
+    items: ['Estudiando y profundizando', 'Python'],
+  },
+  {
+    icon: Globe,
+    title: 'Web (secundario)',
+    items: ['React', 'TailwindCSS', 'Supabase'],
   },
 ]
 
@@ -77,11 +77,12 @@ export default function TechFocus() {
           className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/10 text-center"
         >
           <p className="text-gray-300 text-lg">
-            Aspiro a profundizar en el desarrollo{' '}
-            <span className="text-white font-semibold">backend</span>, al mismo tiempo que
-            profundizo en{' '}
+            Mi prioridad es la{' '}
+            <span className="text-white font-semibold">investigación en sistemas</span>:
+            diseño de SO, compiladores y Linux con C/C++, al mismo tiempo que profundizo en{' '}
             <span className="text-white font-semibold">Machine Learning</span> y{' '}
-            <span className="text-white font-semibold">Deep Learning</span>.
+            <span className="text-white font-semibold">Deep Learning</span>. El desarrollo web
+            queda como un interés <span className="text-white font-semibold">secundario</span>.
           </p>
         </motion.div>
       </div>

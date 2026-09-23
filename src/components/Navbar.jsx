@@ -6,6 +6,7 @@ const links = [
   { label: 'Inicio', href: '#hero' },
   { label: 'Sobre mí', href: '#about' },
   { label: 'Proyectos', href: '#projects' },
+  { label: 'Liderazgo', href: '#leadership' },
   { label: 'Enfoque', href: '#tech-focus' },
   { label: 'Educación', href: '#education' },
   { label: 'Habilidades', href: '#skills' },

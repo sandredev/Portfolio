@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Code2, Target, Brain } from 'lucide-react'
+import { Microscope, Terminal, Brain } from 'lucide-react'
 
 const highlights = [
   {
-    icon: Code2,
-    label: 'Desarrollo Web',
-    desc: 'React, TailwindCSS, NodeJS, Express',
+    icon: Microscope,
+    label: 'Investigación en sistemas',
+    desc: 'Diseño de SO y compiladores con C/C++, Linux',
+  },
+  {
+    icon: Terminal,
+    label: 'Linux, Scripting y Bajo Nivel',
+    desc: 'Líder de CILISP: formo a quienes quieren empezar',
   },
   {
     icon: Brain,
     label: 'ML & Deep Learning',
-    desc: 'Aprendiendo y profundizando constantemente',
-  },
-  {
-    icon: Target,
-    label: 'Backend',
-    desc: 'Enfoque principal con Python y Django',
+    desc: 'Estudiando y profundizando continuamente',
   },
 ]
 
@@ -48,23 +48,29 @@ export default function About() {
             className="space-y-5"
           >
             <p className="text-gray-300 leading-relaxed text-lg">
-              Santiago es un apasionado estudiante de{' '}
+              Santiago es estudiante de{' '}
               <span className="text-white font-semibold">Ingeniería de Sistemas</span> en la
-              Universidad del Magdalena, dedicado a la programación y amante de los retos
-              mentalmente exigentes.
+              Universidad del Magdalena, orientado a la{' '}
+              <span className="text-white font-semibold">investigación</span>. Estudia diseño
+              de <span className="text-white font-semibold">sistemas operativos</span> y{' '}
+              <span className="text-white font-semibold">compiladores</span> con C/C++, además
+              de <span className="text-white font-semibold">Linux</span>.
             </p>
             <p className="text-gray-300 leading-relaxed text-lg">
-              Se caracteriza por su buen rendimiento en entornos desafiantes,{' '}
-              <span className="text-white font-semibold">liderazgo</span> y eficiente
-              manejo del tiempo y los recursos. Visualiza cada fallo como una oportunidad
-              de aprendizaje.
+              Es <span className="text-white font-semibold">presidente de Syste+</span>,
+              Asociación de Estudiantes de Ingeniería de Sistemas (2026-II — 2027-I), miembro
+              en formación del semillero{' '}
+              <span className="text-white font-semibold">GIDSYC</span> y líder de la{' '}
+              <span className="text-white font-semibold">CILISP</span>: comunidad de estudio
+              de Linux, Scripting y Programación de Bajo Nivel.
             </p>
             <p className="text-gray-300 leading-relaxed text-lg">
-              Sus metas a largo plazo son convertirse en un programador{' '}
-              <span className="text-white font-semibold">backend</span> especializado en{' '}
-              <span className="text-white font-semibold">Machine Learning</span> y
-              desarrollar sistemas de aprendizaje automático eficientes que respondan a
-              problemáticas actuales.
+              También estudia y profundiza en{' '}
+              <span className="text-white font-semibold">Machine Learning y Deep Learning</span>.
+              El desarrollo de páginas web es hoy un interés{' '}
+              <span className="text-white font-semibold">secundario</span>. Se caracteriza por
+              su liderazgo, buen rendimiento en entornos desafiantes y por ver cada fallo como
+              una oportunidad de aprendizaje.
             </p>
           </motion.div>
 

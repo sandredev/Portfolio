@@ -5,20 +5,20 @@ import { ExternalLink } from 'lucide-react'
 
 const projects = [
   {
-    title: 'Eventorproducciones',
+    title: 'Math_Parser',
     description:
-      'Plataforma web para una empresa organizadora de eventos. Permite gestionar reservas, visualizar información de la empresa y reseñar servicios, productos y eventos reservables.',
-    tags: ['React', 'TailwindCSS', 'NodeJS', 'Express'],
-    url: 'https://eventorproducciones.vercel.app/',
-    github: 'https://github.com/sandredev',
+      'Parser en C++ que resuelve expresiones matemáticas con funciones trigonométricas. Incluye gramática formal (grammar.txt), compilación con CMake y suite de pruebas. Proyecto ligado a mi estudio de compiladores y programación de bajo nivel.',
+    tags: ['C++', 'Parsing', 'Gramáticas', 'CMake'],
+    url: 'https://github.com/sandredev/Math_Parser',
+    github: 'https://github.com/sandredev/Math_Parser',
   },
   {
-    title: 'Sandwiches Otto Web',
+    title: 'Sandwiches Otto',
     description:
-      'Sistema web para la gestión de inventario de un emprendimiento de sándwiches. Permite registrar y analizar ventas, gestionar el menú y llevar contabilidad.',
-    tags: ['React', 'TailwindCSS', 'NodeJS', 'Express'],
-    url: 'https://otto-web-rose.vercel.app/',
-    github: 'https://github.com/sandredev',
+      'Aplicación web usada por el emprendimiento Sándwiches Otto en la Universidad del Magdalena para registrar ventas, generar reportes y analizar estadísticas. Stack con React, TailwindCSS y Supabase, con flujo Git Flow, Conventional Commits y despliegue en Vercel.',
+    tags: ['React', 'TailwindCSS', 'Supabase', 'Vercel'],
+    url: 'https://sandwiches-otto.vercel.app',
+    github: 'https://github.com/ravenminddev/sandwiches-otto',
   },
 ]
 

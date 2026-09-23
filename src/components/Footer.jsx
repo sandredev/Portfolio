@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 export default function Footer() {
   return (
     <footer className="relative z-10 border-t border-white/5 py-8 px-6">

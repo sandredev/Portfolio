@@ -16,7 +16,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-primary-light font-mono text-sm mb-4 tracking-widest uppercase"
           >
-            Estudiante de Ingeniería de Sistemas
+            Estudiante de Ingeniería de Sistemas · Enfoque en investigación
           </motion.p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
@@ -32,10 +32,12 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            Apasionado por el desarrollo{' '}
-            <span className="text-white font-semibold">backend</span>, el{' '}
-            <span className="text-white font-semibold">Machine Learning</span> y la
-            creación de soluciones web <span className="text-white font-semibold">eficientes</span>.
+            Interesado en la <span className="text-white font-semibold">investigación</span>:
+            diseño de <span className="text-white font-semibold">sistemas operativos</span> y{' '}
+            <span className="text-white font-semibold">compiladores</span> con C/C++,{' '}
+            <span className="text-white font-semibold">Linux</span> y{' '}
+            <span className="text-white font-semibold">Machine & Deep Learning</span>. El
+            desarrollo web es secundario.
           </motion.p>
 
           <motion.div

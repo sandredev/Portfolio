@@ -10,28 +10,46 @@ import {
   Lightbulb,
   RefreshCw,
   Globe,
+  Terminal,
+  BookOpen,
+  Brain,
 } from 'lucide-react'
 
 const skillGroups = [
   {
-    title: 'Lenguajes',
+    title: 'Lenguajes principales',
     icon: Code2,
-    skills: ['Java', 'C++', 'Python', 'JavaScript'],
+    skills: ['C', 'C++', 'Python', 'Java', 'JavaScript'],
   },
   {
-    title: 'Frameworks',
+    title: 'Sistemas y bajo nivel',
+    icon: Terminal,
+    skills: ['Linux', 'Bash / Scripting', 'CMake', 'Git', 'Git Flow'],
+  },
+  {
+    title: 'CS fundamentals',
+    icon: BookOpen,
+    skills: ['Sistemas operativos', 'Compiladores', 'Gramáticas', 'Parsing'],
+  },
+  {
+    title: 'ML & Data',
+    icon: Brain,
+    skills: ['Machine Learning (en formación)', 'Deep Learning (en formación)', 'Python científico (en formación)'],
+  },
+  {
+    title: 'Web (secundario)',
     icon: Code2,
-    skills: ['React', 'TailwindCSS', 'Swing', 'PySide6', 'Pygame'],
+    skills: ['React', 'TailwindCSS', 'Supabase', 'Vercel'],
   },
   {
     title: 'Bases de datos',
     icon: Database,
-    skills: ['SQLServer', 'PostgreSQL'],
+    skills: ['SQLServer', 'PostgreSQL', 'Supabase'],
   },
   {
     title: 'Herramientas',
     icon: Wrench,
-    skills: ['Git', 'GitHub', 'VS Code', 'IntelliJ IDEA'],
+    skills: ['GitHub', 'VS Code', 'IntelliJ IDEA'],
   },
   {
     title: 'Idiomas',
@@ -41,10 +59,12 @@ const skillGroups = [
 ]
 
 const softSkills = [
+  { icon: Users, label: 'Liderazgo' },
   { icon: MessageCircle, label: 'Comunicación efectiva' },
-  { icon: Users, label: 'Trabajo en equipo' },
   { icon: Lightbulb, label: 'Resolución de problemas' },
   { icon: RefreshCw, label: 'Adaptabilidad' },
+  { icon: BookOpen, label: 'Mentalidad investigativa' },
+  { icon: Terminal, label: 'Mentoría a principiantes' },
 ]
 
 export default function Skills() {

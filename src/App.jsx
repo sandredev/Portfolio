@@ -4,6 +4,7 @@ import {
   Hero,
   About,
   Projects,
+  Leadership,
   TechFocus,
   Education,
   Skills,
@@ -19,7 +20,7 @@ export default function App() {
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'tech-focus', 'education', 'skills', 'contact']
+    const sections = ['hero', 'about', 'projects', 'leadership', 'tech-focus', 'education', 'skills', 'contact']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,6 +50,7 @@ export default function App() {
         <Hero />
         <About />
         <Projects />
+        <Leadership />
         <TechFocus />
         <Education />
         <Skills />
