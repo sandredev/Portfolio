@@ -1,7 +1,11 @@
 ---
+import SectionHeading from './SectionHeading.astro';
+
 const projects = [
   {
     title: 'Math_Parser',
+    file: 'math_parser.cpp',
+    lang: 'C++',
     description:
       'Parser en C++ que resuelve expresiones matemáticas con funciones trigonométricas. Incluye gramática formal (grammar.txt), compilación con CMake y suite de pruebas. Proyecto ligado a mi estudio de compiladores y programación de bajo nivel.',
     tags: ['C++', 'Parsing', 'Gramáticas', 'CMake'],
@@ -10,6 +14,8 @@ const projects = [
   },
   {
     title: 'Sandwiches Otto',
+    file: 'sandwiches-otto/',
+    lang: 'TypeScript',
     description:
       'Aplicación web usada por el emprendimiento Sándwiches Otto en la Universidad del Magdalena para registrar ventas, generar reportes y analizar estadísticas. Stack con React, TailwindCSS y Supabase, con flujo Git Flow, Conventional Commits y despliegue en Vercel.',
     tags: ['React', 'TailwindCSS', 'Supabase', 'Vercel'],
@@ -21,18 +27,25 @@ const projects = [
 
 <section id="projects" class="py-24 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="reveal text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Proyectos <span class="text-primary">destacados</span>
-      </h2>
-      <div class="w-20 h-1 bg-primary rounded-full mx-auto"></div>
-    </div>
+    <SectionHeading index="02" command="ls ~/proyectos --destacados">
+      Proyectos <span class="text-primary">destacados</span>
+    </SectionHeading>
 
     <div class="grid md:grid-cols-2 gap-8">
       {
         projects.map((project) => (
-          <article class="group relative bg-surface rounded-2xl border border-white/5 overflow-hidden hover:border-primary/30 transition-all duration-500">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <article class="card-glow group relative bg-surface rounded-2xl border border-white/5 overflow-hidden hover:border-primary/30">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-black/30">
+              <span class="w-3 h-3 rounded-full bg-[#ff5f57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#febc2e]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28c840]"></span>
+              <span class="term-prompt ml-2 text-xs text-gray-500 truncate">{project.file}</span>
+              <span class="term-prompt ml-auto hidden sm:inline text-[10px] uppercase tracking-wider text-primary-light/70 border border-primary/20 bg-primary/10 rounded px-1.5 py-0.5">
+                {project.lang}
+              </span>
+            </div>
 
             <div class="relative p-8">
               <div class="flex items-start justify-between mb-4">
@@ -84,16 +97,17 @@ const projects = [
       }
     </div>
 
-    <p class="reveal text-center mt-12 text-gray-400">
-      Más proyectos en
+    <p class="reveal term-prompt text-center mt-12 text-sm text-gray-400">
+      <span class="text-gray-600">$</span> más proyectos en
       <a
         href="https://github.com/sandredev"
         target="_blank"
         rel="noopener noreferrer"
         class="text-primary hover:text-primary-light underline underline-offset-4 transition-colors"
       >
-        GitHub
+        github.com/sandredev
       </a>
+      <span class="term-caret"></span>
     </p>
   </div>
 </section>

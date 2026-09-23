@@ -1,4 +1,6 @@
 ---
+import SectionHeading from './SectionHeading.astro';
+
 const highlights = [
   {
     label: 'Investigación en sistemas',
@@ -20,12 +22,9 @@ const highlights = [
 
 <section id="about" class="py-24 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="reveal text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Sobre <span class="text-primary">mí</span>
-      </h2>
-      <div class="w-20 h-1 bg-primary rounded-full mx-auto"></div>
-    </div>
+    <SectionHeading index="01" command="whoami">
+      Sobre <span class="text-primary">mí</span>
+    </SectionHeading>
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="reveal space-y-5">
@@ -59,7 +58,7 @@ const highlights = [
       <div class="reveal grid gap-4">
         {
           highlights.map((item) => (
-            <div class="flex items-start gap-4 p-5 rounded-xl bg-surface border border-white/5 hover:border-primary/20 transition-all duration-300 group">
+            <div class="card-glow flex items-start gap-4 p-5 rounded-xl bg-surface border border-white/5 hover:border-primary/20 group">
               <div class="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
               </div>

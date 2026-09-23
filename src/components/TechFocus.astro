@@ -1,4 +1,6 @@
 ---
+import SectionHeading from './SectionHeading.astro';
+
 const focuses = [
   {
     title: 'Sistemas y compiladores',
@@ -30,17 +32,14 @@ const focuses = [
 
 <section id="tech-focus" class="py-24 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="reveal text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Enfoque <span class="text-primary">técnico</span>
-      </h2>
-      <div class="w-20 h-1 bg-primary rounded-full mx-auto"></div>
-    </div>
+    <SectionHeading index="04" command="./stack --enfoque">
+      Enfoque <span class="text-primary">técnico</span>
+    </SectionHeading>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         focuses.map((item) => (
-          <div class="reveal p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/20 transition-all duration-300 group">
+          <div class="card-glow reveal p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/20 group">
             <div class="p-3 rounded-xl bg-primary/10 text-primary w-fit mb-5 group-hover:bg-primary/20 transition-colors">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
             </div>

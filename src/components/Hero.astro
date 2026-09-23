@@ -1,11 +1,15 @@
 ---
+const roles = ['diseño de SO', 'compiladores', 'Linux', 'ML & Deep Learning'];
+const chips = ['C/C++', 'Linux', 'Bash', 'CMake', 'Python'];
 ---
 
-<section id="hero" class="min-h-screen flex items-center justify-center relative px-6 pt-16">
-  <div class="text-center max-w-4xl mx-auto">
+<section id="hero" class="min-h-screen flex items-center justify-center relative px-6 pt-16 overflow-hidden">
+  <div class="absolute inset-0 bg-dotgrid mask-fade-b opacity-70 pointer-events-none"></div>
+
+  <div class="text-center max-w-4xl mx-auto relative">
     <div class="animate-fade-up">
-      <p class="text-primary-light font-mono text-sm mb-4 tracking-widest uppercase">
-        Estudiante de Ingeniería de Sistemas · Enfoque en investigación
+      <p class="term-prompt text-sm mb-5 text-gray-500">
+        <span class="text-primary-light">santiago@unimag</span><span class="text-gray-600">:</span><span class="text-gray-400">~</span><span class="text-gray-600">$</span> whoami
       </p>
 
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
@@ -15,14 +19,28 @@
         </span>
       </h1>
 
-      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-        Interesado en la <span class="text-white font-semibold">investigación</span>:
-        diseño de <span class="text-white font-semibold">sistemas operativos</span> y
+      <p class="term-prompt text-base md:text-lg text-gray-300 mb-3">
+        <span class="text-gray-600">$</span> enfocado en
+        <span id="typed-role" class="text-white font-semibold">diseño de SO</span><span class="term-caret"></span>
+      </p>
+
+      <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+        Investigación en <span class="text-white font-semibold">sistemas operativos</span> y
         <span class="text-white font-semibold">compiladores</span> con C/C++,
         <span class="text-white font-semibold">Linux</span> y
         <span class="text-white font-semibold">Machine &amp; Deep Learning</span>. El
         desarrollo web es secundario.
       </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+        {
+          chips.map((chip) => (
+            <span class="term-prompt px-3 py-1 text-xs text-primary-light bg-primary/10 border border-primary/20 rounded-md">
+              {chip}
+            </span>
+          ))
+        }
+      </div>
 
       <div class="flex items-center justify-center gap-4">
         <a
@@ -79,3 +97,38 @@
     </div>
   </a>
 </section>
+
+<script define:vars={{ roles }}>
+  const el = document.getElementById('typed-role');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (el && !reduce) {
+    let wi = 0;
+    let ci = roles[0].length;
+    let deleting = true;
+    const tick = () => {
+      const word = roles[wi];
+      if (deleting) {
+        ci -= 1;
+        el.textContent = word.slice(0, ci);
+        if (ci === 0) {
+          deleting = false;
+          wi = (wi + 1) % roles.length;
+          setTimeout(tick, 350);
+          return;
+        }
+        setTimeout(tick, 35);
+      } else {
+        const next = roles[wi];
+        ci += 1;
+        el.textContent = next.slice(0, ci);
+        if (ci === next.length) {
+          deleting = true;
+          setTimeout(tick, 1800);
+          return;
+        }
+        setTimeout(tick, 60);
+      }
+    };
+    setTimeout(tick, 1800);
+  }
+</script>

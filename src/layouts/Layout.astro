@@ -67,6 +67,17 @@ import '../styles/global.css';
         { threshold: 0.12 },
       );
       document.querySelectorAll('.reveal').forEach((el) => revealer.observe(el));
+
+      // Barra de progreso de scroll
+      const bar = document.getElementById('scroll-progress');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const p = max > 0 ? h.scrollTop / max : 0;
+        if (bar) bar.style.transform = `scaleX(${p})`;
+      };
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     </script>
   </body>
 </html>
